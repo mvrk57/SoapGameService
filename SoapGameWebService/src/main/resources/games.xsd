@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://is2.example.com"
+           targetNamespace="http://is2.example.com" elementFormDefault="qualified">
+
+       <xs:element name="getGameInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getGameInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gameInfo" type="tns:game"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:complexType name="game">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="releasedate" type="xs:string"/>
+            <xs:element name="recommendedAge" type="xs:int"/>
+            <xs:element name="genre" type="xs:string"/>
+            <xs:element name="price" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
